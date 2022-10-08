@@ -1,0 +1,7 @@
+1000            ece
+1001            cse
+1002            ILI
+1003            EEE
+1004            amr
+1005            ank
+1006          gorai

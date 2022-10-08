@@ -1,0 +1,6 @@
+
+Compile the project using this command
+
+cc TeleDir.c TeleEnq.c EmpMaint.c DeptMaint.c TeleMaint.c FileFunctions.c Functions.c -o Tele -w
+
+.\Tele
