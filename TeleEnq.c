@@ -132,10 +132,10 @@ void fnEnqByName()
         trim(employee_name, employee_name);
         trim(emp_location, emp_location);
         char str1[26];
-        strcpy(str1, strlwr(employee_name));
+        strcpy(str1, employee_name);
         char str2[26];
-        strcpy(str2, strlwr(emp_name));
-        char *search = strstr(str1, str2);
+        strcpy(str2, emp_name);
+        char *search = strstr(strlwr(str1), strlwr(str2));
         fnGetDeptName(department_name, dept_code);
         if (search != NULL)
         {
@@ -153,6 +153,7 @@ void fnEnqByName()
     }
     if (check == 0)
     {
+        fnGotoxy(15, 10);
         printf("Employee not found!");
     }
 

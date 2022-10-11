@@ -126,6 +126,15 @@ void fnAddTeleNum()
             emp_location[5] = '\0';
             if (emp_id == inpemp_id)
             {
+                if (phone_no != 0)
+                {
+                    fnGotoxy(20, 16);
+                    printf("A phone number has alredy been assigned to the Employee.");
+                    fnGotoxy(20, 17);
+                    printf("Press any key to continue");
+                    getch();
+                    fnTeleDirMenu();
+                }
                 fnGotoxy(52, 10);
                 trim(emp_location, emp_location);
                 printf("%s", emp_location);

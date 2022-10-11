@@ -429,7 +429,6 @@ void fnMainMenu()
 	case 4:
 		fnTeleEnqMenu();
 		break;
-	default:
 	}
 }
 

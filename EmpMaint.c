@@ -131,6 +131,7 @@ void fnAddNewEmp()
     fnOpenFile(EMP_FILE);
     fnWriteFile(acLine, EMP_FILE);
     fnCloseFile(EMP_FILE);
+    fnGotoxy(15, 13);
     printf("Employee Added");
     getch();
     fnEmpMenu();
