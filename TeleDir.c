@@ -75,8 +75,11 @@ int fnDisplayTeleDirMenu()
 		return 2;
 		break;
 	default:
-		fnGotoxy(25, 13);
+		fnGotoxy(25, 14);
 		printf("Enter a valid choice");
+		fnGotoxy(25, 15);
+		printf("Press any key to continue");
+		getch();
 		fnTeleDirMenu();
 	}
 }
@@ -126,8 +129,11 @@ int fnDisplayTeleEnqMenu()
 		return 3;
 		break;
 	default:
-		fnGotoxy(25, 15);
+		fnGotoxy(25, 16);
 		printf("Enter a valid choice");
+		fnGotoxy(25, 17);
+		printf("Press any key to continue");
+		getch();
 		fnTeleEnqMenu();
 	}
 }
@@ -211,7 +217,7 @@ int fnDisplayEmpMenu()
 	fnGotoxy(25, 13);
 	printf("3. Goto Main Menu");
 	fnGotoxy(25, 15);
-	printf("Enter your choice : ");
+	printf("Enter your choice");
 
 	char cUsrChoice = getch();
 
@@ -230,8 +236,11 @@ int fnDisplayEmpMenu()
 		break;
 
 	default:
-		fnGotoxy(25, 17);
+		fnGotoxy(25, 16);
 		printf("Enter a valid choice");
+		fnGotoxy(25, 17);
+		printf("Press any key to continue");
+		getch();
 		fnEmpMenu();
 		break;
 	}
@@ -281,8 +290,11 @@ int fnDisplayDepartmentMenu()
 		return 3;
 		break;
 	default:
-		fnGotoxy(25, 15);
+		fnGotoxy(25, 16);
 		printf("Enter a valid choice!!");
+		fnGotoxy(25, 17);
+		printf("Press any key to continue");
+		getch();
 		fnDepartmentMenu();
 	}
 }

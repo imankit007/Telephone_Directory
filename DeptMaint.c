@@ -63,17 +63,18 @@ int fnAddDept(char acDeptName[])
         else
             fnReadFile(acLine, DEP_FILE, CURRENT);
 
-        sscanf(acLine, "%*d, %s", tempDeptName);
-        if (strcasecmp(acDeptName, acLine) == 0)
+        sscanf(acLine, "%*d%s", tempDeptName);
+        if (strcasecmp(acDeptName, tempDeptName) == 0)
         {
             return 1;
         }
     }
-
+    giDeptCode++;
+    fnGotoxy(42, 9);
+    printf("%d", giDeptCode);
     sprintf(acLine, "%4d%15s", giDeptCode, acDeptName);
     fnWriteFile(acLine, DEP_FILE);
     fnCloseFile(DEP_FILE);
-    fnDepartmentMenu();
     return 0;
 }
 
@@ -156,32 +157,35 @@ void fnAddNewDepartment()
     printf("Department Code");
     fnGotoxy(40, 9);
     printf(": ____");
-    giDeptCode++;
 
-    fnGotoxy(42, 9);
-    printf("%d", giDeptCode);
-    fnGotoxy(15, 12);
-    printf("Press any key to continue");
     fnGotoxy(42, 8);
     gets(dept_name);
+    fflush(stdin);
     if (strlen(dept_name) > 15)
     {
+        fnGotoxy(15, 11);
         printf("The Department name should not exceed 15 character");
-        printf("Press any key to reenter Department Name");
+        fnGotoxy(15, 12);
+        printf("Press any key to continue");
         getch();
-        fnAddNewDepartment();
+        fnDepartmentMenu();
     }
     else
     {
         if (fnAddDept(dept_name) == 1)
         {
+            fnGotoxy(15, 11);
             printf("The Department already exits!!");
-            printf("Press any key to reenter Department Name");
-            fnAddNewDepartment();
+            fnGotoxy(15, 12);
+            printf("Press any key to continue");
+            getch();
+            fnDepartmentMenu();
         }
         else
         {
+            fnGotoxy(15, 11);
             printf("Department added");
+            fnGotoxy(15, 12);
             printf("Enter any key to continue....");
         }
     }

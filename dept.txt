@@ -4,4 +4,7 @@
 1003            EEE
 1004            amr
 1005            ank
-1006          gorai
+1006         amrita
+1007         ankita
+1008          civil
+1009      ankiteadf
