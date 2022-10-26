@@ -121,7 +121,6 @@ void fnAddTeleNum()
             sscanf(empDetails, "%4d%25c%4d%5c%ld", &emp_id, &emp_name, &dep_id, &emp_location, &phone_no);
 
             dept_code = dep_id;
-            phone_no_max;
             emp_name[25] = '\0';
             emp_location[5] = '\0';
             if (emp_id == inpemp_id)

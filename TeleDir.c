@@ -25,6 +25,8 @@ void fnPrintDepts();
 int fnInitializeEmpCode();
 void fnAddNewEmp();
 void fnPrintEmp();
+
+/* Forward declaration of functions defined in TeleMaint.c */
 void fnAddTeleNum();
 /* Forward declaration of functions defined in TeleEnq.c */
 void fnEnqByTeleNum();
@@ -215,8 +217,10 @@ int fnDisplayEmpMenu()
 	fnGotoxy(25, 12);
 	printf("2. Print Employee Details");
 	fnGotoxy(25, 13);
-	printf("3. Goto Main Menu");
-	fnGotoxy(25, 15);
+	printf("3. Change Department of Employee");
+	fnGotoxy(25, 14);
+	printf("4. Goto Main Menu");
+	fnGotoxy(25, 16);
 	printf("Enter your choice");
 
 	char cUsrChoice = getch();
@@ -235,10 +239,14 @@ int fnDisplayEmpMenu()
 		return 3;
 		break;
 
+	case '4':
+		return 4;
+		break;
+
 	default:
-		fnGotoxy(25, 16);
-		printf("Enter a valid choice");
 		fnGotoxy(25, 17);
+		printf("Enter a valid choice");
+		fnGotoxy(25, 18);
 		printf("Press any key to continue");
 		getch();
 		fnEmpMenu();
@@ -320,7 +328,11 @@ void fnEmpMenu()
 	case 2:
 		fnPrintEmp();
 		break;
+
 	case 3:
+		fnChangeEmpDept();
+		break;
+	case 4:
 		fnMainMenu();
 		break;
 	default:

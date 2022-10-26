@@ -85,8 +85,8 @@ int fnCheckValidDepts(int idept_id)
         sscanf(deptDetails, "%d%s", &dept_id, &dept_name);
         if (idept_id == dept_id)
         {
-            fnGotoxy(48, 13);
-            printf("%s", dept_name);
+            // fnGotoxy(48, 13);
+            // printf("%s", dept_name);
             fnCloseFile(DEP_FILE);
             return 1;
         }
@@ -95,14 +95,14 @@ int fnCheckValidDepts(int idept_id)
     return 0;
 }
 
-void fnHideDepts()
+void fnHideDepts(int y)
 {
     fnOpenFile(DEP_FILE);
     char deptDetails[20];
     int i = 0, j;
     while (fnReadFile(deptDetails, DEP_FILE, CURRENT) == 0)
     {
-        fnGotoxy(30, 20 + i);
+        fnGotoxy(30, y + i);
         for (j = 0; j < 40; j++)
         {
             printf(" ");
@@ -112,7 +112,7 @@ void fnHideDepts()
     fnCloseFile(DEP_FILE);
 }
 
-void fnDisplayDepts()
+void fnDisplayDepts(int y)
 {
     fnOpenFile(DEP_FILE);
     char deptDetails[20];
@@ -122,9 +122,9 @@ void fnDisplayDepts()
     while (fnReadFile(deptDetails, DEP_FILE, CURRENT) == 0)
     {
         sscanf(deptDetails, "%4d%s", &dept_id, &dept_name);
-        fnGotoxy(30, 20 + i);
+        fnGotoxy(30, y + i);
         printf("%d", dept_id);
-        fnGotoxy(56, 20 + i);
+        fnGotoxy(56, y + i);
         printf("%s", dept_name);
         i++;
     }
